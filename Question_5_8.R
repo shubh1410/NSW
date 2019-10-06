@@ -28,10 +28,13 @@ plot(z)
 z <- alpha_centrality(g, nodes = V(g), alpha = 1, loops = FALSE,
                       exo = .7, weights = NULL, tol = 1e-07, sparse = TRUE)
 plot(z)
+
+
 library(CINNA)
+library(igraph)
 library(centiserve)
-links <- read.table("C:\\Users\\lglg9\\Desktop\\out1.hubbell",sep = " ",header = F,fill=TRUE)
-caida <- graph_from_data_frame(d=link,directed = T)
+links <- read.table("C:\\Users\\lglg9\\Desktop\\out.moreno_lesmis",sep = " ",header = F,fill=TRUE)
+
+caida <- graph_from_data_frame(d=links,directed = T)
 is_weighted(caida)
 visualize_graph( caida , centrality.type="Hubbell Index")
-
